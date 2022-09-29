@@ -1,0 +1,220 @@
+{
+    "openapi": "3.0.3",
+    "info":{ 
+        "title":"API Documentation for Data Processing and Modeling",
+        "version":"1.0.0",
+        "description": "[ BASE URL : 127.0.0.1:5000]",
+        "termsOfService": "/kuis3"
+    },
+
+
+    "paths":{
+        "/":{
+            "get":{
+                "tags" : ["Index"],
+                "summary": "",
+                "description": "",
+                "responses": {
+                    "200":{
+                        "description": "Success"
+                    },
+                    "400":{
+                        "description": "Misunderstood"
+                    },
+                    "401":{
+                        "description": "Unauthorized"
+                    },
+                    "404":{
+                        "description": "Not Found"
+                    },
+                    "500":{
+                        "description": "Server Error"
+                    }
+                }
+            }
+        },
+
+        "/lang":{
+            "get":{
+                "tags" : ["lang"],
+                "summary": "Ambil semua data",
+                "description": "",
+                "responses": {
+                    "200":{
+                        "description": "Success"
+                    },
+                    "400":{
+                        "description": "Misunderstood"
+                    },
+                    "401":{
+                        "description": "Unauthorized"
+                    },
+                    "404":{
+                        "description": "Not Found"
+                    },
+                    "500":{
+                        "description": "Server Error"
+                    }
+                }
+            },
+            "post":{
+                "tags" : ["lang"],
+                "summary": "Input Data Baru",
+                "description": "",
+                "requestBody":{
+                    "required": true,
+                    "content": {
+                        "multipart/form-data":{
+                            "schema":{
+                                "type": "object",
+                                "properties": {
+                                    "text":{
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "Success"
+                    },
+                    "400":{
+                        "description": "Misunderstood"
+                    },
+                    "401":{
+                        "description": "Unauthorized"
+                    },
+                    "404":{
+                        "description": "Not Found"
+                    },
+                    "500":{
+                        "description": "Server Error"
+                    }
+                }
+            }
+        },
+
+        "/lang/{name}" : {
+            "get":{
+                "tags" : ["lang"],
+                "summary": "Ambil data berdasarkan name",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "required": true,
+                        "description": "name",
+                        "schema":{
+                            "type":"string"
+                        }
+
+                    }
+                ],
+                "responses": {
+                    "200":{
+                        "description": "Success"
+                    },
+                    "400":{
+                        "description": "Misunderstood"
+                    },
+                    "401":{
+                        "description": "Unauthorized"
+                    },
+                    "404":{
+                        "description": "Not Found"
+                    },
+                    "500":{
+                        "description": "Server Error"
+                    }
+                }
+            },
+            "put":{
+                "tags" : ["lang"],
+                "summary": "Edit name data tertentu",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "required": true,
+                        "description": "",
+                        "schema":{
+                            "type":"string"
+                        }
+
+                    }
+                ],
+                "requestBody":{
+                    "required": true,
+                    "content": {
+                        "multipart/form-data":{
+                            "schema":{
+                                "type": "object",           
+                                "properties": {
+                                    "text":{
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "Success"
+                    },
+                    "400":{
+                        "description": "Misunderstood"
+                    },
+                    "401":{
+                        "description": "Unauthorized"
+                    },
+                    "404":{
+                        "description": "Not Found"
+                    },
+                    "500":{
+                        "description": "Server Error"
+                    }
+                }
+            },
+            "delete":{
+                "tags" : ["lang"],
+                "summary": "Hapus data berdasarkan name",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "required": true,
+                        "description": "name",
+                        "schema":{
+                            "type":"string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200":{
+                        "description": "Success"
+                    },
+                    "400":{
+                        "description": "Misunderstood"
+                    },
+                    "401":{
+                        "description": "Unauthorized"
+                    },
+                    "404":{
+                        "description": "Not Found"
+                    },
+                    "500":{
+                        "description": "Server Error"
+                    }
+                }
+            }
+
+        }
+        
+    }
+}
